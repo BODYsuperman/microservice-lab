@@ -2,6 +2,7 @@ package com.itheima.mp.mapper;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
+import com.baomidou.mybatisplus.extension.toolkit.Db;
 import com.itheima.mp.domain.po.User;
 import com.itheima.mp.domain.po.UserInfo;
 import org.junit.jupiter.api.Test;
@@ -54,7 +55,13 @@ class UserMapperTest1 {
         user.setPassword("123");
         user.setPhone("18688990011");
         user.setBalance(200);
-        //user.setInfo("{\"age\": 24, \"intro\": \"英文老师\", \"gender\": \"female\"}");
+//        user.setInfo("{\"age\": 24, \"intro\": \"英文老师\", \"gender\": \"female\"}");
+        UserInfo userInfo = new UserInfo();
+        userInfo.setAge(24);
+        userInfo.setIntro("英文老师");
+        userInfo.setGender("female");
+
+        user.setInfo(userInfo);
         user.setCreateTime(LocalDateTime.now());
         user.setUpdateTime(LocalDateTime.now());
         userMapper.insert(user);
@@ -70,6 +77,25 @@ class UserMapperTest1 {
     void testSelectByIds() {
         List<User> users = userMapper.selectBatchIds(List.of(1L, 2L, 3L));
         users.forEach(System.out::println);
+    }
+
+    @Test
+    void testQueryByNameandBalance(){
+        List<User> users = Db.lambdaQuery(User.class)
+                .like(User::getUsername, "o")
+                .ge(User::getBalance, 1000)
+                .list();
+
+        users.forEach(System.out::println);
+    }
+
+    @Test
+    void testUpdate(){
+        Db.lambdaUpdate(User.class)
+                .set(User::getBalance, 2000)
+                .eq(User::getUsername, "Rose")
+                .update();
+
     }
 
     @Test

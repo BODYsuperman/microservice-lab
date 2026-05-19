@@ -17,7 +17,7 @@ public class User {
     /**
      * 用户id
      */
-    @TableId(value = "id", type = IdType.INPUT)
+    @TableId(value = "id", type = IdType.AUTO)
     private Long id;
 
     /**
@@ -41,6 +41,7 @@ public class User {
      */
     @TableField(typeHandler = JacksonTypeHandler.class)
     private UserInfo info;
+    //private  String info;
 
     /**
      * 使用状态（1正常 2冻结）

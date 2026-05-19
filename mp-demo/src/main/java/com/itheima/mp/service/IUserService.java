@@ -12,4 +12,10 @@ public interface IUserService extends IService<User> {
     List<User> queryUsers(String username, Integer status, Long min, Long max);
 
     PageVO<UserVO> queryUserByPage(PageQuery query);
+
+    void deduct(Long id, Integer money);
+
+    UserVO queryUserAndAddressById(Long userId);
+
+    List<UserVO> queryUserAndAddressByIds(List<Long> ids);
 }
