@@ -3,6 +3,9 @@ server:
 spring:
   application:
     name: item-service
+    cloud:
+      nacos:
+        server-addr: localhost:8848 #
   profiles:
     active: dev
   datasource:

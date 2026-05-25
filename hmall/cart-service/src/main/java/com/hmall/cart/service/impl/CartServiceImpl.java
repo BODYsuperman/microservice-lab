@@ -1,9 +1,11 @@
 package com.hmall.cart.service.impl;
 
+import cn.hutool.core.util.RandomUtil;
 import cn.hutool.core.util.StrUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 //import com.hmall.api.client.ItemClient;
+import com.hmall.cart.client.ItemClient;
 import com.hmall.cart.domain.dto.ItemDTO;
 import com.hmall.cart.config.CartProperties;
 import com.hmall.cart.domain.dto.CartFormDTO;
@@ -17,7 +19,13 @@ import com.hmall.common.utils.BeanUtils;
 import com.hmall.common.utils.CollUtils;
 import com.hmall.common.utils.UserContext;
 import lombok.RequiredArgsConstructor;
+import org.springframework.cloud.client.ServiceInstance;
+import org.springframework.cloud.client.discovery.DiscoveryClient;
+import org.springframework.core.ParameterizedTypeReference;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.Collection;
 import java.util.List;
@@ -38,11 +46,11 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class CartServiceImpl extends ServiceImpl<CartMapper, Cart> implements ICartService {
     //
-    // private final RestTemplate restTemplate;
+    //private final RestTemplate restTemplate;
     //
-    // private final DiscoveryClient discoveryClient;
+    //private final DiscoveryClient discoveryClient;
 
-    //private final ItemClient itemClient;
+    private final ItemClient itemClient;
 
     private final CartProperties cartProperties;
 
@@ -90,8 +98,24 @@ public class CartServiceImpl extends ServiceImpl<CartMapper, Cart> implements IC
     private void handleCartItems(List<CartVO> vos) {
         // 1.获取商品id
         Set<Long> itemIds = vos.stream().map(CartVO::getItemId).collect(Collectors.toSet());
+
+//        List<ServiceInstance> instances = discoveryClient.getInstances("item-service");
+//
+//        ServiceInstance instance = instances.get(RandomUtil.randomInt(instances.size()));
+//
+//        ResponseEntity<List<ItemDTO>> response = restTemplate.exchange(
+//                instance.getUri() + "/items?ids={ids}",
+//                HttpMethod.GET,
+//                null,
+//                new ParameterizedTypeReference<List<ItemDTO>>() {
+//                },
+//                StrUtil.join(",", itemIds)
+//        );
+//        if(!response.getStatusCode().is2xxSuccessful()){
+//            return;
+//        }
         // 2.查询商品
-       /* // 2.1.获取服务实例列表
+       /*2.1.获取服务实例列表
         List<ServiceInstance> instances = discoveryClient.getInstances("item-service");
         // 2.2.手写负载均衡
         ServiceInstance instance = instances.get(RandomUtil.randomInt(instances.size()));
@@ -108,24 +132,24 @@ public class CartServiceImpl extends ServiceImpl<CartMapper, Cart> implements IC
             return;
         }
         List<ItemDTO> items = response.getBody();*/
-        // List<ItemDTO> items = itemService.queryItemByIds(itemIds);
+        List<ItemDTO> items = itemClient.queryItemByIds(itemIds);
         //List<ItemDTO> items = itemClient.queryItemByIds(itemIds);
-//        List<ItemDTO> items = null;
-//        if (CollUtils.isEmpty(items)) {
-//            throw new BadRequestException("购物车中商品不存在！");
-//        }
-//        // 3.转为 id 到 item的map
-//        Map<Long, ItemDTO> itemMap = items.stream().collect(Collectors.toMap(ItemDTO::getId, Function.identity()));
-//        // 4.写入vo
-//        for (CartVO v : vos) {
-//            ItemDTO item = itemMap.get(v.getItemId());
-//            if (item == null) {
-//                continue;
-//            }
-//            v.setNewPrice(item.getPrice());
-//            v.setStatus(item.getStatus());
-//            v.setStock(item.getStock());
-//        }
+        //List<ItemDTO> items = null;
+        if (CollUtils.isEmpty(items)) {
+            throw new BadRequestException("购物车中商品不存在！");
+        }
+        // 3.转为 id 到 item的map
+        Map<Long, ItemDTO> itemMap = items.stream().collect(Collectors.toMap(ItemDTO::getId, Function.identity()));
+        // 4.写入vo
+        for (CartVO v : vos) {
+            ItemDTO item = itemMap.get(v.getItemId());
+            if (item == null) {
+                continue;
+            }
+            v.setNewPrice(item.getPrice());
+            v.setStatus(item.getStatus());
+            v.setStock(item.getStock());
+        }
     }
 
     @Override
