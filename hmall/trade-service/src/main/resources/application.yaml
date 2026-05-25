@@ -1,15 +1,15 @@
 server:
-  port: 8082
+  port: 8084
 spring:
   application:
-    name: cart-service
-    cloud:
-      nacos:
-        server-addr: localhost:8848 #
+    name: trade-service
+  cloud:
+    nacos:
+      server-addr: localhost:8848 #
   profiles:
     active: dev
   datasource:
-    url: jdbc:mysql://localhost:3307/hm-cart?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&serverTimezone=Asia/Shanghai
+    url: jdbc:mysql://localhost:3307/hm-trade?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&serverTimezone=Asia/Shanghai
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: ${hm.db.username}
     password: ${hm.db.password}
@@ -30,8 +30,8 @@ logging:
 knife4j:
   enable: true
   openapi:
-    title: 购物车服务接口文档
-    description: "购物车服务接口文档"
+    title: 交易服务接口文档
+    description: "交易服务接口文档"
     email: zhanghuyi@itcast.cn
     concat: 虎哥
     url: https://www.itcast.cn
@@ -41,7 +41,21 @@ knife4j:
         group-name: default
         api-rule: package
         api-rule-resources:
-          - com.hmall.cart.controller
+          - com.hmall.trade.controller
+hm:
+  jwt:
+    location: classpath:hmall.jks
+    alias: hmall
+    password: hmall123
+    tokenTTL: 30m
+  auth:
+    excludePaths:
+      - /search/**
+      - /users/login
+      - /items/**
+      - /hi
+
+
 feign:
   okhttp:
     enabled: true # 开启OKHttp功能

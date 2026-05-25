@@ -1,0 +1,8 @@
+
+
+hm:
+  db:
+    host: localhost  # 或 127.0.0.1
+    port: 3307       # 关键：使用 3307
+    username: root
+    password: 123
