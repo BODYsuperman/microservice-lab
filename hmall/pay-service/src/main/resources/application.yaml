@@ -1,15 +1,15 @@
 server:
-  port: 8081
+  port: 8085
 spring:
   application:
-    name: item-service
+    name: pay-service
     cloud:
       nacos:
         server-addr: localhost:8848 #
   profiles:
     active: dev
   datasource:
-    url: jdbc:mysql://localhost:3307/hm-item?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&serverTimezone=Asia/Shanghai
+    url: jdbc:mysql://localhost:3307/hm-pay?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&serverTimezone=Asia/Shanghai
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: ${hm.db.username}
     password: ${hm.db.password}
@@ -30,8 +30,8 @@ logging:
 knife4j:
   enable: true
   openapi:
-    title: 商品服务接口文档
-    description: "商品服务接口文档"
+    title: 支付服务接口文档
+    description: "支付服务接口文档"
     email: zhanghuyi@itcast.cn
     concat: 虎哥
     url: https://www.itcast.cn
@@ -41,7 +41,7 @@ knife4j:
         group-name: default
         api-rule: package
         api-rule-resources:
-          - com.hmall.item.controller
+          - com.hmall.pay.controller
 
 feign:
   okhttp:
