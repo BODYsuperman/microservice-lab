@@ -1,0 +1,58 @@
+00:14:58:852  WARN 62666 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=17m26s693ms).
+00:15:08:744  INFO 62666 --- [nacos-grpc-client-executor-5444] com.alibaba.nacos.common.remote.client   : [c85cc44e-d980-4022-8112-d504693bbe0e] Receive server push request, request = ClientDetectionRequest, requestId = 92
+00:15:08:748  INFO 62666 --- [nacos-grpc-client-executor-5444] com.alibaba.nacos.common.remote.client   : [c85cc44e-d980-4022-8112-d504693bbe0e] Ack server push request, request = ClientDetectionRequest, requestId = 92
+00:32:50:420  WARN 62666 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=17m21s490ms).
+00:33:00:639  INFO 62666 --- [nacos-grpc-client-executor-5457] com.alibaba.nacos.common.remote.client   : [c85cc44e-d980-4022-8112-d504693bbe0e] Receive server push request, request = ClientDetectionRequest, requestId = 99
+00:33:00:640  INFO 62666 --- [nacos-grpc-client-executor-5457] com.alibaba.nacos.common.remote.client   : [c85cc44e-d980-4022-8112-d504693bbe0e] Ack server push request, request = ClientDetectionRequest, requestId = 99
+01:49:37:410  WARN 62666 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=16m14s79ms).
+01:49:49:272  INFO 62666 --- [nacos-grpc-client-executor-6269] com.alibaba.nacos.common.remote.client   : [c85cc44e-d980-4022-8112-d504693bbe0e] Receive server push request, request = ClientDetectionRequest, requestId = 104
+01:49:49:274  INFO 62666 --- [nacos-grpc-client-executor-6269] com.alibaba.nacos.common.remote.client   : [c85cc44e-d980-4022-8112-d504693bbe0e] Ack server push request, request = ClientDetectionRequest, requestId = 104
+03:04:47:167  WARN 62666 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m38s940ms).
+03:04:58:772  INFO 62666 --- [nacos-grpc-client-executor-7064] com.alibaba.nacos.common.remote.client   : [c85cc44e-d980-4022-8112-d504693bbe0e] Receive server push request, request = ClientDetectionRequest, requestId = 111
+03:04:58:774  INFO 62666 --- [nacos-grpc-client-executor-7064] com.alibaba.nacos.common.remote.client   : [c85cc44e-d980-4022-8112-d504693bbe0e] Ack server push request, request = ClientDetectionRequest, requestId = 111
+03:15:51:695  WARN 62666 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=10m34s505ms).
+03:16:03:557  INFO 62666 --- [nacos-grpc-client-executor-7079] com.alibaba.nacos.common.remote.client   : [c85cc44e-d980-4022-8112-d504693bbe0e] Receive server push request, request = ClientDetectionRequest, requestId = 118
+03:16:03:560  INFO 62666 --- [nacos-grpc-client-executor-7079] com.alibaba.nacos.common.remote.client   : [c85cc44e-d980-4022-8112-d504693bbe0e] Ack server push request, request = ClientDetectionRequest, requestId = 118
+03:32:55:819  WARN 62666 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=16m34s117ms).
+03:33:07:812  INFO 62666 --- [nacos-grpc-client-executor-7091] com.alibaba.nacos.common.remote.client   : [c85cc44e-d980-4022-8112-d504693bbe0e] Receive server push request, request = ClientDetectionRequest, requestId = 125
+03:33:07:817  INFO 62666 --- [nacos-grpc-client-executor-7091] com.alibaba.nacos.common.remote.client   : [c85cc44e-d980-4022-8112-d504693bbe0e] Ack server push request, request = ClientDetectionRequest, requestId = 125
+03:49:33:426  INFO 62666 --- [nacos-grpc-client-executor-7097] com.alibaba.nacos.common.remote.client   : [c85cc44e-d980-4022-8112-d504693bbe0e] Receive server push request, request = ClientDetectionRequest, requestId = 132
+03:49:33:429  INFO 62666 --- [nacos-grpc-client-executor-7097] com.alibaba.nacos.common.remote.client   : [c85cc44e-d980-4022-8112-d504693bbe0e] Ack server push request, request = ClientDetectionRequest, requestId = 132
+03:49:51:293  WARN 62666 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=16m25s464ms).
+04:37:17:640  WARN 62666 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Retrograde clock change detected (housekeeper delta=25s792ms), soft-evicting connections from pool.
+04:54:44:540  WARN 62666 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=4m26s756ms).
+04:54:59:502  INFO 62666 --- [nacos-grpc-client-executor-7919] com.alibaba.nacos.common.remote.client   : [c85cc44e-d980-4022-8112-d504693bbe0e] Receive server push request, request = ClientDetectionRequest, requestId = 137
+04:54:59:504  INFO 62666 --- [nacos-grpc-client-executor-7919] com.alibaba.nacos.common.remote.client   : [c85cc44e-d980-4022-8112-d504693bbe0e] Ack server push request, request = ClientDetectionRequest, requestId = 137
+06:10:56:820  INFO 62666 --- [nacos-grpc-client-executor-8734] com.alibaba.nacos.common.remote.client   : [c85cc44e-d980-4022-8112-d504693bbe0e] Receive server push request, request = ClientDetectionRequest, requestId = 144
+06:10:56:831  INFO 62666 --- [nacos-grpc-client-executor-8734] com.alibaba.nacos.common.remote.client   : [c85cc44e-d980-4022-8112-d504693bbe0e] Ack server push request, request = ClientDetectionRequest, requestId = 144
+06:11:12:842  WARN 62666 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=16m25s331ms).
+06:16:45:405  WARN 62666 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=5m32s568ms).
+06:16:59:689  INFO 62666 --- [nacos-grpc-client-executor-8748] com.alibaba.nacos.common.remote.client   : [c85cc44e-d980-4022-8112-d504693bbe0e] Receive server push request, request = ClientDetectionRequest, requestId = 151
+06:16:59:690  INFO 62666 --- [nacos-grpc-client-executor-8748] com.alibaba.nacos.common.remote.client   : [c85cc44e-d980-4022-8112-d504693bbe0e] Ack server push request, request = ClientDetectionRequest, requestId = 151
+06:17:00:268  INFO 62666 --- [nacos-grpc-client-executor-8749] com.alibaba.nacos.common.remote.client   : [c85cc44e-d980-4022-8112-d504693bbe0e] Receive server push request, request = NotifySubscriberRequest, requestId = 154
+06:17:00:331  INFO 62666 --- [nacos-grpc-client-executor-8749] com.alibaba.nacos.common.remote.client   : [c85cc44e-d980-4022-8112-d504693bbe0e] Ack server push request, request = NotifySubscriberRequest, requestId = 154
+06:17:02:016  INFO 62666 --- [nacos-grpc-client-executor-8750] com.alibaba.nacos.common.remote.client   : [c85cc44e-d980-4022-8112-d504693bbe0e] Receive server push request, request = NotifySubscriberRequest, requestId = 157
+06:17:02:019  INFO 62666 --- [nacos-grpc-client-executor-8750] com.alibaba.nacos.common.remote.client   : [c85cc44e-d980-4022-8112-d504693bbe0e] Ack server push request, request = NotifySubscriberRequest, requestId = 157
+06:25:09:623  WARN 62666 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=7m54s207ms).
+06:25:24:052  INFO 62666 --- [nacos-grpc-client-executor-8763] com.alibaba.nacos.common.remote.client   : [c85cc44e-d980-4022-8112-d504693bbe0e] Receive server push request, request = ClientDetectionRequest, requestId = 163
+06:25:24:053  INFO 62666 --- [nacos-grpc-client-executor-8763] com.alibaba.nacos.common.remote.client   : [c85cc44e-d980-4022-8112-d504693bbe0e] Ack server push request, request = ClientDetectionRequest, requestId = 163
+06:30:10:163  WARN 62666 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=4m30s529ms).
+06:30:24:746  INFO 62666 --- [nacos-grpc-client-executor-8777] com.alibaba.nacos.common.remote.client   : [c85cc44e-d980-4022-8112-d504693bbe0e] Receive server push request, request = ClientDetectionRequest, requestId = 170
+06:30:24:747  INFO 62666 --- [nacos-grpc-client-executor-8777] com.alibaba.nacos.common.remote.client   : [c85cc44e-d980-4022-8112-d504693bbe0e] Ack server push request, request = ClientDetectionRequest, requestId = 170
+07:01:00:477  WARN 62666 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=12m20s161ms).
+07:01:16:662  INFO 62666 --- [nacos-grpc-client-executor-9025] com.alibaba.nacos.common.remote.client   : [c85cc44e-d980-4022-8112-d504693bbe0e] Receive server push request, request = ClientDetectionRequest, requestId = 177
+07:01:16:665  INFO 62666 --- [nacos-grpc-client-executor-9025] com.alibaba.nacos.common.remote.client   : [c85cc44e-d980-4022-8112-d504693bbe0e] Ack server push request, request = ClientDetectionRequest, requestId = 177
+07:24:00:432  WARN 62666 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=16m59s896ms).
+07:47:12:552  WARN 62666 --- [Thread-7] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Start destroying common HttpClient
+07:47:12:552  WARN 62666 --- [Thread-4] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Start destroying Publisher
+07:47:12:575  WARN 62666 --- [Thread-4] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Destruction of the end
+07:47:12:607  WARN 62666 --- [Thread-7] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Destruction of the end
+07:47:14:067  INFO 62666 --- [SpringApplicationShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : De-registering from Nacos Server now...
+07:47:14:072  INFO 62666 --- [SpringApplicationShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : De-registration finished.
+07:47:14:393  INFO 62666 --- [SpringApplicationShutdownHook] com.alibaba.nacos.common.remote.client   : Shutdown rpc client, set status to shutdown
+07:47:14:394  INFO 62666 --- [SpringApplicationShutdownHook] com.alibaba.nacos.common.remote.client   : Shutdown client event executor java.util.concurrent.ScheduledThreadPoolExecutor@24202a33[Running, pool size = 2, active threads = 2, queued tasks = 0, completed tasks = 0]
+07:47:14:394  INFO 62666 --- [SpringApplicationShutdownHook] com.alibaba.nacos.common.remote.client   : Close current connection 1779695045509_192.168.65.1_43017
+07:47:14:411  INFO 62666 --- [nacos-grpc-client-executor-9426] c.a.n.c.remote.client.grpc.GrpcClient    : [1779695045509_192.168.65.1_43017]Ignore complete event,isRunning:false,isAbandon=false
+07:47:14:454  INFO 62666 --- [SpringApplicationShutdownHook] c.a.n.c.remote.client.grpc.GrpcClient    : Shutdown grpc executor java.util.concurrent.ThreadPoolExecutor@3ea3cf1d[Running, pool size = 6, active threads = 0, queued tasks = 0, completed tasks = 9427]
+07:47:14:479  INFO 62666 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+07:47:14:524  INFO 62666 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

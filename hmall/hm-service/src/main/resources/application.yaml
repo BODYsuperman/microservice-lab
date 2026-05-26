@@ -46,6 +46,8 @@ hm:
     password: hmall123
     tokenTTL: 30m
   auth:
+    includePaths:
+      - /**
     excludePaths:
       - /search/**
       - /users/login

@@ -45,3 +45,7 @@ knife4j:
 feign:
   okhttp:
     enabled: true # 开启OKHttp功能
+
+hm:
+  cart:
+    maxSize: 10
