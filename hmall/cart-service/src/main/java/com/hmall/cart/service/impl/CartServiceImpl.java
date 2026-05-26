@@ -167,8 +167,8 @@ public class CartServiceImpl extends ServiceImpl<CartMapper, Cart> implements IC
 
     private void checkCartsFull(Long userId) {
         long count = lambdaQuery().eq(Cart::getUserId, userId).count();
-        if (count >= cartProperties.getMaxSize()) {
-            throw new BizIllegalException(StrUtil.format("用户购物车课程不能超过{}", cartProperties.getMaxSize()));
+        if (count >= cartProperties.getMaxAmount()) {
+            throw new BizIllegalException(StrUtil.format("用户购物车商品数量不能超过{}", cartProperties.getMaxAmount()));
         }
     }
 

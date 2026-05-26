@@ -1,8 +1,14 @@
 
 
+
 hm:
   db:
-    host: localhost  # 或 127.0.0.1
-    port: 3307       # 关键：使用 3307
+    host: localhost       # ← 保持不变
+    port: 3307            # ← 改成 Docker 映射的端口
     username: root
     password: 123
+    database: hm-user
+
+  swagger:
+    title: 用户服务接口文档
+    package: com.hmall.user.controller

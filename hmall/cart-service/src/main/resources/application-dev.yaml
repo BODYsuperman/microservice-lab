@@ -6,3 +6,8 @@ hm:
     port: 3307            # ← 改成 Docker 映射的端口
     username: root
     password: 123
+    database: hm-cart
+
+  swagger:
+     title: 购物车服务接口文档
+     package: com.hmall.cart.controller
