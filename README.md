@@ -10,7 +10,7 @@ Monolithic architecture: As the name suggests, all functional modules in the pro
 When deploying the project, all modules need to be compiled and packaged together; the architecture design and development model are very simple.<br>
 
 <div align=center>
-<img src="./image/monolithic_architecture.png" width="500" />
+<img src="./image/单体架构.png" width="500" />
 </div>
 When the project scale is small, this model is easy to get started with, and deployment and operations are convenient, so many early small projects adopted this pattern.<br>
 However, as the project's business scale grows larger and the development team increases, monolithic architecture presents more and more problems:<br>
@@ -29,13 +29,13 @@ Microservices architecture is first and foremost about service-oriented design, 
 - Team Autonomy: Each microservice has its own independent development, testing, release, and operations personnel, with team size not exceeding 10 people (two pizzas can feed them)<br>
 - Service Autonomy: Each microservice is independently packaged and deployed, accessing its own independent database. And proper service isolation must be done to avoid impacting other services<br>
 <div align=center>
-<img src="./image/microservices.png" width="500" /><br>
+<img src="./image/微服务.png" width="500" /><br>
 </div>
 
 # Project Overall Architecture
 
 <div align=center>
-<img src="./image/architecture_diagram.png" width="500" />
+<img src="./image/架构图.png" width="500" />
 </div>
 
 # Key Technologies Summary
@@ -249,7 +249,7 @@ then creates and runs containers based on the image, and the application deploym
 ### Common Docker Commands and Relationships
 
 <div align=center>
-<img src="./image/docker_commands.png" width="500" /><br>
+<img src="./image/docker命令.png" width="500" /><br>
 </div>
 
 ## SpringCloud
@@ -383,7 +383,7 @@ Now, the microservices gateway serves the same purpose. Frontend requests cannot
 - After authentication, the gateway determines which microservice the request should access based on the request and forwards the request
 
 <div align=center>
-<img src="./image/gateway.png" width="500" /><br>
+<img src="./image/网关.png" width="500" /><br>
 </div>
 
 In SpringCloud, two gateway implementation solutions are provided:<br>
@@ -413,7 +413,7 @@ spring:
 ### Gateway Login Verification
 
 <div align=center>
-<img src="./image/gateway_login_verification.png" width="500" /><br>
+<img src="./image/网关登录校验.png" width="500" /><br>
 </div>
 
 #### Gateway Filter
@@ -423,7 +423,7 @@ and this filter is the last one in the entire filter chain. If we can define a f
 that implements login verification logic and define the filter execution order before NettyRoutingFilter, this meets the requirement!
 
 <div align=center>
-<img src="./image/gateway_filter.png" width="500" /><br>
+<img src="./image/网关过滤器.png" width="500" /><br>
 </div>
 
 ```java
@@ -515,13 +515,13 @@ public RequestInterceptor userInfoRequestInterceptor(){
 Click the flow control button behind the cluster point link to configure rate limiting:
 
 <div align=center>
-<img src="./image/request_rate_limiting.png" width="500" /><br>
+<img src="./image/请求限流.png" width="500" /><br>
 </div>
 
 Fill in the popup menu like this:<br>
 
 <div align=center>
-<img src="./image/flow_control_rules.png" width="500" /><br>
+<img src="./image/流控规则.png" width="500" /><br>
 </div>
 This limits the query shopping cart list cluster point resource traffic to 6 per second, meaning the maximum QPS is 6.<br>
 
@@ -531,7 +531,7 @@ When querying the shopping cart, product information needs to be queried. To avo
 we can isolate the product query part of the shopping cart business and limit available thread resources:<br>
 
 <div align=center>
-<img src="./image/thread_isolation.png" width="500" /><br>
+<img src="./image/线程隔离.png" width="500" /><br>
 </div>
 
 #### OpenFeign Integration with Sentinel
@@ -545,18 +545,18 @@ feign:
 Click the flow control button behind the cluster point resource corresponding to the product query FeignClient:<br>
 
 <div align=center>
-<img src="./image/thread_isolation1.png" width="500" /><br>
+<img src="./image/线程隔离1.png" width="500" /><br>
 </div>
 
 <div align=center>
-<img src="./image/thread_isolation2.png" width="500" /><br>
+<img src="./image/线程隔离2.png" width="500" /><br>
 </div>
 
 Note that here the concurrent thread number limit is selected, meaning this query function can use at most 5 threads, not 5 QPS.
 If the product query interface processes 2 requests per second, then the actual QPS of 5 threads is around 10, and excess requests will naturally be rejected.<br>
 
 <div align=center>
-<img src="./image/thread_isolation3.png" width="500" /><br>
+<img src="./image/线程隔离3.png" width="500" /><br>
 </div>
 
 ## Seata - Distributed Transactions
@@ -712,7 +712,7 @@ Creating an inverted index is a special processing and application of the forwar
 The search process of the inverted index is as follows (taking search for "Huawei phone" as an example), as shown in the figure:<br>
 
 <div align=center>
-<img src="./image/inverted_index.png" width="500" /><br>
+<img src="./image/倒排索引.png" width="500" /><br>
 </div>
 
 Process description:<br>
