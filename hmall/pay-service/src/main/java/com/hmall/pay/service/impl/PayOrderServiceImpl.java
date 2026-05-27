@@ -19,6 +19,8 @@ import com.hmall.pay.service.IPayOrderService;
 
 import io.seata.spring.annotation.GlobalTransactional;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -34,12 +36,15 @@ import java.time.LocalDateTime;
  */
 @Service
 @RequiredArgsConstructor
+@Slf4j
 public class PayOrderServiceImpl extends ServiceImpl<PayOrderMapper, PayOrder> implements IPayOrderService {
 
     private final UserClient userClient;
 
-    private final OrderClient orderClient;
+   // private final OrderClient orderClient;
 
+
+    private  final RabbitTemplate rabbitTemplate;
     @Override
     public String applyPayOrder(PayApplyDTO applyDTO) {
         // 1.幂等性校验
@@ -70,7 +75,15 @@ public class PayOrderServiceImpl extends ServiceImpl<PayOrderMapper, PayOrder> i
 //        order.setId(po.getBizOrderNo());
 //        order.setStatus(2);
 //        order.setPayTime(LocalDateTime.now());
-        orderClient.markOrderPaySuccess(po.getBizOrderNo());
+        //orderClient.markOrderPaySuccess(po.getBizOrderNo());
+
+        try {
+            rabbitTemplate.convertAndSend("pay.topic", "pay.success", po.getBizOrderNo());
+
+            log.info("支付成功的消息发送!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+        } catch (Exception e) {
+            log.error("支付成功的消息发送失败，支付单id：{}， 交易单id：{}", po.getId(), po.getBizOrderNo(), e);
+        }
     }
 
     public boolean markPayOrderSuccess(Long id, LocalDateTime successTime) {

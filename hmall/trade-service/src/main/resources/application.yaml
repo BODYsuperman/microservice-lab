@@ -5,6 +5,3 @@ feign:
   okhttp:
     enabled: true # 开启OKHttp功能
 
-
-seata:
-  data-source-proxy-mode: XA
