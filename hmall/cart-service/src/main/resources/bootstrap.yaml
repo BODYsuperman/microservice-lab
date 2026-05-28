@@ -14,4 +14,5 @@ spring:
           - dataId: shared-swagger.yaml # 共享日志配置
           - dataId: shared-jwt.yaml
           - dataId: shared-seata.yaml # 共享seata配置
+          - dataId: shared-mq.yaml
             group: DEFAULT_GROUP
