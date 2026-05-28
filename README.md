@@ -1,3 +1,5 @@
+English | [简体中文](./README.zh-CN.md)
+
 # Project Introduction
 
 Heima Mall is an e-commerce shopping mall system developed based on the most popular microservices architecture today, designed to provide users with an efficient and smooth shopping experience.
